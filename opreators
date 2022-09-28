@@ -1,0 +1,27 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+	int x,y;
+	char op;
+	cout<<"enter value of x;";
+	cin>>x;
+	cout<<"enter   value of y;";
+	cin>>y;
+	cout<<"enter operator"<<endl;
+	cin>>op;
+	if(op=='+')
+	cout<<"the value is:"<<x+y;
+	else if(op=='-')
+	cout<<"the value is:"<<x-y;
+	else if(op=='*')
+	cout<<"the value is:"<<x*y;
+	else if(op=='/')
+	cout<<"the value is;"<<x/y;
+	else if(op=='%')
+	cout<<"the modulus is:"<<x%y;
+	else
+	cout<<"wrong opretor..."<<endl;
+	return 0;
+}
