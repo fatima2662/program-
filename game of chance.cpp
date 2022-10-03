@@ -6,7 +6,7 @@ using namespace std;
 int rolldice();
 int main()
 {
-	enum status{continue, won,lost};
+	enum status{CONTINUE, WON,LOST };
 	int mypoint;
 	status gamestatus;
 	srand(time(0));
@@ -15,28 +15,28 @@ int main()
 	{
 		case 7:
 		case 1:
-		gamestatus=won;
+		gamestatus=WON;
 		break;
 		case 2:
 		case 3:
 		case 12:
-		gamestatus=lost;
+		gamestatus=LOST;
 		break;
 		default:
-			gamestatus=continue;
+			gamestatus=CONTINUE;
 			mypoint=sumofdice;
 			cout<<"point is"<<mypoint<<endl;
 			break;
 	}
-	 while(gamestatus==continue)
+	 while(gamestatus==CONTINUE)
 	 {
 	 	sumofdice=rolldice();
 	 	if(sumofdice==mypoint)
-	 	gamestatus=won;
+	 	gamestatus=WON;
 	 	else if(sumofdice==7)
-	 	gamestatus=lost;
+	 	gamestatus=LOST;
 	 }
-	  if(gamestatus==won)
+	  if(gamestatus==WON)
 	  cout<<"palyers wins"<<endl;
 	  else
 	  cout<<"palyers loses"<<endl;
@@ -46,6 +46,6 @@ int main()
     	int die1=1+rand()%6;
     	int die2=1+rand()%6;
     	int sum=die1+die2;
-    	cout<<"palyers rolled"<<die<<"+"<<die2<<"="<<sum<<endl;
+    	cout<<"palyers rolled"<<die1<<"+"<<die2<<"="<<sum<<endl;
     	return sum;
 	}
